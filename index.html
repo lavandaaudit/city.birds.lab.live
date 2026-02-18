@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Birds Stack</title>
+<title>Birds Stack Smooth</title>
 
 <style>
 * {
@@ -15,32 +15,31 @@
 
 html, body {
     width: 100%;
-    height: 100%;
-    background: black;
-    overflow-x: hidden;
+    background: #000;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
-/* Контейнер всіх сторінок */
+/* Один загальний потік сторінки */
 .stack {
     width: 100%;
 }
 
-/* Блок кожної сторінки */
+/* Секція сторінки */
 .page {
     width: 100%;
-    height: 100vh; /* повний екран */
+    height: 100vh;
 }
 
-/* iframe */
-.page iframe {
+/* iframe без лагів */
+iframe {
     width: 100%;
     height: 100%;
     border: none;
     display: block;
 }
 
-/* Мобільна оптимізація */
+/* Мобільна стабільність */
 @media (max-width: 768px) {
     .page {
         height: 100vh;
@@ -54,15 +53,15 @@ html, body {
 <div class="stack">
 
     <div class="page">
-        <iframe src="https://lavandaaudit.github.io/Irpin.city.birds/" loading="lazy"></iframe>
+        <iframe src="https://lavandaaudit.github.io/Irpin.city.birds/"></iframe>
     </div>
 
     <div class="page">
-        <iframe src="https://lavandaaudit.github.io/city.birds/" loading="lazy"></iframe>
+        <iframe src="https://lavandaaudit.github.io/city.birds/"></iframe>
     </div>
 
     <div class="page">
-        <iframe src="https://lavandaaudit.github.io/shop.birds/" loading="lazy"></iframe>
+        <iframe src="https://lavandaaudit.github.io/shop.birds/"></iframe>
     </div>
 
 </div>
