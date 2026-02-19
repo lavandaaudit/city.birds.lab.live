@@ -22,12 +22,10 @@
             background: var(--bg);
             height: 100%;
             overflow-y: scroll;
-            /* Scroll Snapping */
             scroll-snap-type: y mandatory;
             scroll-behavior: smooth;
         }
 
-        /* Стилізація скролбару */
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -74,11 +72,9 @@
             height: 100%;
             border: none;
             display: block;
-            /* Важливо для мобільних */
             -webkit-overflow-scrolling: touch;
         }
 
-        /* Захисний шар, щоб скрол не "залипав" при переході */
         .scroll-catcher {
             position: absolute;
             top: 0;
@@ -87,10 +83,8 @@
             height: 100%;
             z-index: 10;
             pointer-events: none;
-            /* за замовчуванням прозорий */
         }
 
-        /* Коли фіксуємо скрол - блокуємо iframe */
         body.is-scrolling iframe {
             pointer-events: none;
         }
@@ -126,6 +120,14 @@
         </div>
     </div>
 
+    <!-- НОВА СТОРІНКА -->
+    <div class="section">
+        <div class="label">BIRD DATABASE</div>
+        <div class="frame-wrap">
+            <iframe src="https://lavandaaudit.github.io/baza.birds/"></iframe>
+        </div>
+    </div>
+
     <div class="section">
         <div class="label">PREMIUM FAN SHOP</div>
         <div class="frame-wrap">
@@ -134,7 +136,6 @@
     </div>
 
     <script>
-        // JS для того, щоб під час основного скролу іфрейми не перехоплювали курсор
         let isScrolling;
         window.addEventListener('scroll', function () {
             document.body.classList.add('is-scrolling');
@@ -146,7 +147,6 @@
             }, 150);
         }, false);
 
-        // Також додаємо невеличкий зум при скролі для ефекту
         const wraps = document.querySelectorAll('.frame-wrap');
         window.addEventListener('scroll', () => {
             wraps.forEach(wrap => {
@@ -154,7 +154,6 @@
                 const visible = rect.top < window.innerHeight && rect.bottom > 0;
                 if (visible) {
                     const scale = 1 - Math.abs(rect.top) / 3000;
-                    // wrap.style.transform = `scale(${Math.max(0.95, scale)})`;
                 }
             });
         });
